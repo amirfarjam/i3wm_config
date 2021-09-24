@@ -40,11 +40,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+## start a terminal
+bindsym $mod+Return exec gnome-terminal
 
-# kill focused window
-bindsym $mod+Shift+q kill
+## kill focused window
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -180,3 +180,12 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+## set the wallpaper. we can use --bg-tile,--bg-center,--bg-max for our pics.
+## exec_always means at startup of system and also at restart of i3 this command will run.
+exec_always feh --bg-fill /home/farjam/Pictures/fender-american-p2-1.jpg
+## lock the system
+bindsym $mod+shift+q exec i3lock
+
+##programs which run at startup
+exec firefox
